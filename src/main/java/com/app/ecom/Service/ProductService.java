@@ -24,7 +24,7 @@ public class ProductService {
         return mapToProductResponse(savedProduct);
     }
 
-    private ProductResponse mapToProductResponse(Product savedProduct) {
+    public ProductResponse mapToProductResponse(Product savedProduct) {
         ProductResponse response = new ProductResponse();
         response.setId(savedProduct.getId());
         response.setName(savedProduct.getName());

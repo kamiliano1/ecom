@@ -25,6 +25,7 @@ public class CartService {
     private final CartItemRepository cartItemRepository;
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
+    private final ProductService productService;
 
     public boolean addToCart(String userId, CartItemRequest request) {
         Optional<Product> productOpt = productRepository.findById(request.getProductId());
@@ -86,27 +87,30 @@ public class CartService {
     }
 
     public List<CartItemResponse> getUserCart(String userId) {
-        return cartItemRepository.findByUserId(userId).stream()
-                .map(this::mapToCartItemResponse)
+        return userRepository.findById(Long.valueOf(userId))
+                .map(cartItemRepository::findByUser)
+                .orElseGet(List::of)
+                .stream().map(this::mapToCartItemResponse)
                 .collect(Collectors.toList());
+    }
 
+    public List<CartItem> getCart(String userId) {
+        return userRepository.findById(Long.valueOf(userId))
+                .map(cartItemRepository::findByUser)
+                .orElseGet(List::of);
     }
 
     private CartItemResponse mapToCartItemResponse(CartItem cartItem) {
         CartItemResponse response = new CartItemResponse();
         response.setPrice(cartItem.getPrice());
         response.setQuantity(cartItem.getQuantity());
-        ProductResponse responses = new ProductResponse();
-        responses.setId(cartItem.getProduct().getId());
-        responses.setName(cartItem.getProduct().getName());
-        responses.setDescription(cartItem.getProduct().getDescription());
-        responses.setPrice(cartItem.getProduct().getPrice());
-        responses.setStockQuantity(cartItem.getProduct().getStockQuantity());
-        responses.setCategory(cartItem.getProduct().getCategory());
-        responses.setImageUrl(cartItem.getProduct().getImageUrl());
-        responses.setActive(cartItem.getProduct().getActive());
-        response.setProduct(responses);
+        ProductResponse productResponse = productService.mapToProductResponse(cartItem.getProduct());
+        response.setProduct(productResponse);
         return response;
     }
-}
 
+    public void clearCart(String userId) {
+        userRepository.findById(Long.valueOf(userId))
+                .ifPresent(cartItemRepository::deleteByUser);
+    }
+}
