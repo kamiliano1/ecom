@@ -5,6 +5,8 @@ import com.app.ecom.Repository.ProductRepository;
 import com.app.ecom.dto.ProductRequest;
 import com.app.ecom.dto.ProductResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,6 +57,15 @@ public class ProductService {
                 });
     }
 
+    public void deductQuantity(Long id, Integer quantity) {
+        productRepository.findById(id)
+                .map(existitngProduct -> {
+                    existitngProduct.setStockQuantity(
+                            existitngProduct.getStockQuantity() - quantity);
+                    productRepository.save(existitngProduct);
+                    return existitngProduct;
+                });
+    }
 
     public List<ProductResponse> getAllProduct() {
         return productRepository.findByActiveTrue()
