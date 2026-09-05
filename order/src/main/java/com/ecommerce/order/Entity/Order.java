@@ -1,5 +1,7 @@
-package com.app.ecom.Entity;
+package com.ecommerce.order.Entity;
 
+import com.ecommerce.order.Entity.OrderItem;
+import com.ecommerce.order.Entity.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,9 +21,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private Long userId;
     private BigDecimal totalAmount;
 
     @Enumerated(EnumType.STRING)

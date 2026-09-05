@@ -1,11 +1,9 @@
-package com.app.ecom.Service;
+package com.ecommerce.order.Service;
 
-import com.app.ecom.Entity.*;
-import com.app.ecom.Repository.CartItemRepository;
-import com.app.ecom.Repository.OrderRepository;
-import com.app.ecom.Repository.UserRepository;
-import com.app.ecom.dto.OrderItemDTO;
-import com.app.ecom.dto.OrderResponse;
+import com.ecommerce.order.Entity.*;
+import com.ecommerce.order.Repository.OrderRepository;
+import com.ecommerce.order.dto.OrderItemDTO;
+import com.ecommerce.order.dto.OrderResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,30 +18,28 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final CartService cartService;
-    private final UserRepository userRepository;
-    private final ProductService productService;
 
-    public Optional<OrderResponse> createOrder(String userId) {
+    public Optional<OrderResponse> createOrder(Long userId) {
         List<CartItem> cartItems = cartService.getCart(userId);
         if (cartItems.isEmpty()) {
             return Optional.empty();
         }
-        Optional<User> userOptional = userRepository.findById(Long.valueOf(userId));
-        if (userOptional.isEmpty()) {
-            return Optional.empty();
-        }
-        User user = userOptional.get();
+//        Optional<User> userOptional = userRepository.findById(Long.valueOf(userId));
+//        if (userOptional.isEmpty()) {
+//            return Optional.empty();
+//        }
+//        User user = userOptional.get();
         BigDecimal totalPrice = cartItems.stream()
                 .map(CartItem::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         Order order = new Order();
-        order.setUser(user);
+        order.setUserId(userId);
         order.setStatus(OrderStatus.CONFIRMED);
         order.setTotalAmount(totalPrice);
         List<OrderItem> orderItems = cartItems.stream()
                 .map(item -> new OrderItem(
                         null,
-                        item.getProduct(),
+                        item.getProductId(),
                         item.getQuantity(),
                         item.getPrice(),
                         order
@@ -52,10 +48,10 @@ public class OrderService {
         order.setItems(orderItems);
         Order savedOrder = orderRepository.save(order);
         cartService.clearCart(userId);
-        savedOrder.getItems()
-                .forEach(item -> {
-                    productService.deductQuantity(item.getId(), item.getQuantity());
-                });
+//        savedOrder.getItems()
+//                .forEach(item -> {
+//                    productService.deductQuantity(item.getId(), item.getQuantity());
+//                });
         return Optional.of(mapToOrderResponse(savedOrder));
     }
 
@@ -76,9 +72,9 @@ public class OrderService {
         OrderItemDTO orderItemDTO = new OrderItemDTO();
         orderItemDTO.setId(orderItem.getId());
         orderItemDTO.setQuantity(orderItem.getQuantity());
-        orderItemDTO.setPrice(orderItem.getProduct().getPrice());
-        orderItemDTO.setProductId(orderItem.getProduct().getId());
-        orderItemDTO.setSubTotal(orderItem.getProduct().getPrice()
+        orderItemDTO.setPrice(orderItem.getPrice());
+        orderItemDTO.setProductId(orderItem.getProductId());
+        orderItemDTO.setSubTotal(orderItem.getPrice()
                 .multiply(BigDecimal
                         .valueOf(orderItem.getQuantity())));
         return orderItemDTO;

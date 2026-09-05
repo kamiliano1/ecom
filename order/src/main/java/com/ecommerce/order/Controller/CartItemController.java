@@ -1,10 +1,8 @@
-package com.app.ecom.Controller;
+package com.ecommerce.order.Controller;
 
-import com.app.ecom.Entity.CartItem;
-import com.app.ecom.Service.CartService;
-import com.app.ecom.dto.CartItemRequest;
-import com.app.ecom.dto.CartItemResponse;
-import com.app.ecom.dto.ProductResponse;
+import com.ecommerce.order.Service.CartService;
+import com.ecommerce.order.dto.CartItemRequest;
+import com.ecommerce.order.dto.CartItemResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +19,7 @@ public class CartItemController {
 
     @GetMapping
     public ResponseEntity<List<CartItemResponse>> getUserCart(
-            @RequestHeader("X-User-ID") String userId
+            @RequestHeader("X-User-ID") Long userId
     ) {
         return new ResponseEntity<>(cartService.getUserCart(userId), HttpStatus.OK);
 
@@ -29,7 +27,7 @@ public class CartItemController {
 
     @PostMapping
     public ResponseEntity<String> addToCart(
-            @RequestHeader("X-User-ID") String userId,
+            @RequestHeader("X-User-ID") Long userId,
             @RequestBody CartItemRequest request) {
         return cartService.addToCart(userId, request)
                 ? new ResponseEntity<String>(HttpStatus.CREATED)
@@ -38,7 +36,7 @@ public class CartItemController {
 
     @DeleteMapping("/items/{productId}")
     public ResponseEntity<String> removeFromCart(
-            @RequestHeader("X-User-ID") String userId,
+            @RequestHeader("X-User-ID") Long userId,
             @PathVariable Long productId) {
         return cartService.removeFromCart(userId, productId)
                 ? new ResponseEntity<String>(HttpStatus.NO_CONTENT)

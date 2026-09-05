@@ -1,12 +1,10 @@
-package com.app.ecom.Service;
+package com.ecommerce.product.Service;
 
-import com.app.ecom.Entity.Product;
-import com.app.ecom.Repository.ProductRepository;
-import com.app.ecom.dto.ProductRequest;
-import com.app.ecom.dto.ProductResponse;
+import com.ecommerce.product.Entity.Product;
+import com.ecommerce.product.Repository.ProductRepository;
+import com.ecommerce.product.dto.ProductRequest;
+import com.ecommerce.product.dto.ProductResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

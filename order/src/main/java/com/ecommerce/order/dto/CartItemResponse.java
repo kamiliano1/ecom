@@ -1,4 +1,4 @@
-package com.app.ecom.dto;
+package com.ecommerce.order.dto;
 
 
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Data
 public class CartItemResponse {
 
-    private ProductResponse product;
+    //    private ProductResponse product;
     private Integer quantity;
     private BigDecimal totalPrice;
 

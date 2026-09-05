@@ -1,6 +1,7 @@
-package com.app.ecom.dto;
+package com.ecommerce.order.dto;
 
-import com.app.ecom.Entity.OrderStatus;
+import com.ecommerce.order.Entity.OrderStatus;
+import com.ecommerce.order.dto.OrderItemDTO;
 import lombok.Data;
 
 import java.math.BigDecimal;

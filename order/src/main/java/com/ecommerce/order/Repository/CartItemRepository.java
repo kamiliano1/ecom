@@ -1,22 +1,19 @@
-package com.app.ecom.Repository;
+package com.ecommerce.order.Repository;
 
-import com.app.ecom.Entity.CartItem;
-import com.app.ecom.Entity.Product;
-import com.app.ecom.Entity.User;
+import com.ecommerce.order.Entity.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Repository
 public interface CartItemRepository extends JpaRepository<CartItem, Long> {
-    CartItem findByUserAndProduct(User user, Product product);
+    CartItem findByUserIdAndProductId(Long userId, Long productId);
 
-    void deleteByUserAndProduct(User user, Product product);
+    void deleteByUserIdAndProductId(Long userId, Long productId);
 
-    void deleteByUser(User user);
+    void deleteByUserId(Long userId);
 
-    List<CartItem> findByUser(User user);
+    List<CartItem> findByUserId(Long userId);
 }
