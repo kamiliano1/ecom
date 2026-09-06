@@ -1,19 +1,14 @@
 package com.ecommerce.user.Entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
-@Entity
 @Data
-@NoArgsConstructor
-@Table(name = "addresses")
+
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String street;
     private String city;
     private String state;

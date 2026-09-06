@@ -1,14 +1,22 @@
 spring:
   application:
     name: user-service
-  datasource:
-    url: jdbc:h2:mem:test
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: create
-  h2:
-    console:
-      enabled: true
+  mongodb:
+    uri: mongodb://localhost:27017/userdb
+    database: userdb
+#  datasource:
+#    #PostgreSQL
+#    url: jdbc:postgresql://localhost:5432/userdb
+#    username: kamil
+#    password: kamil
+#  jpa:
+#    database: POSTGRESQL
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 8082
+logging:
+  level:
+    org.springframework.boot.context.config: DEBUG

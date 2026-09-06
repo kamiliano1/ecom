@@ -7,6 +7,8 @@ import com.ecommerce.user.dto.AddressDto;
 import com.ecommerce.user.dto.UserRequest;
 import com.ecommerce.user.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +34,7 @@ public class UserService {
     }
 
 
-    public boolean updateUser(UserRequest updatedUserRequest, Long id) {
+    public boolean updateUser(UserRequest updatedUserRequest, String id) {
         return userRepository.findById(id)
                 .map(existingUser -> {
                     updateUserFromRequest(existingUser, updatedUserRequest);
@@ -41,7 +43,7 @@ public class UserService {
                 }).orElse(false);
     }
 
-    public Optional<UserResponse> fetchUser(Long id) {
+    public Optional<UserResponse> fetchUser(String id) {
         return userRepository.findById(id)
                 .map(this::mapToUserResponse);
     }
@@ -65,7 +67,7 @@ public class UserService {
 
     private UserResponse mapToUserResponse(User user) {
         UserResponse response = new UserResponse();
-        response.setId(user.getId().toString());
+        response.setId(user.getId());
         response.setUserRole(user.getUserRole());
         response.setEmail(user.getEmail());
         response.setFirstName(user.getFirstName());
