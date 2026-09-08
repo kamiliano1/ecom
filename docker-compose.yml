@@ -27,11 +27,43 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+#  mysql:
+#    container_name: mysql_container
+#    image: mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: kamil
+#      MYSQL_DATABASE: kamil
+#      MYSQL_USER: kamil
+#      MYSQL_PASSWORD: kamil
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#    ports:
+#      - "3307:3306"
+#    networks:
+#      - mysql
+#    restart: unless-stopped
+#  phpmyadmin:
+#    container_name: phpmyadmin_container
+#    image: phpmyadmin/phpmyadmin
+#    environment:
+#      PMA_HOST: mysql
+#      PMA_PORT: 3306
+#      MYSQL_ROOT_PASSWORD: kamil
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#    ports:
+#      - "8484:80"
+#    networks:
+#      - mysql
+#    restart: unless-stopped
 
 networks:
   postgres:
     driver: bridge
+#  mysql:
+#    driver: bridge
 
 volumes:
   postgres:
   pgadmin:
+#  mysql_data:
