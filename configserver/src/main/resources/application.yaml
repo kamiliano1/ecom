@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kamiliano1/app-configurations/
+#         http://localhost:8888/configdemo/default
+#         http://localhost:8888/configdemo/dev
+server:
+  port: 8888
