@@ -12,3 +12,9 @@ build:
   name: "Default-Build"
   type: "Default Build"
   placeholder: ${INTELLIID}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

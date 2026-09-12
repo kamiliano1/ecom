@@ -5,67 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/ConfigdemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Configuration/BuildInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Configuration/ConfigServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/BuildInfoConfigController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/BuildInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/ConfigServerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/test/java/com/info/configdemo/ConfigdemoApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Controller/CartItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Controller/CartItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/EcomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/EcomApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Entity/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Entity/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Repository/CartItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Repository/CartItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/AddressDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/AddressDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/CartItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/CartItemRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/CartItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/CartItemResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/OrderItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/OrderItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/ProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/ProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/ProductResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/UserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/ecom/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/java/com/app/ecom/dto/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/ecom/EcomApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/monolith/src/test/java/com/app/ecom/EcomApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/BuildInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/BuildInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/ConfigServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/ConfigServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,25 +54,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConfigdemoApplication.executor": "Run",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.EcomApplication.executor": "Run",
-    "Application.OrderApplication.executor": "Run",
-    "Application.ProductApplication.executor": "Run",
-    "Application.UserApplication.executor": "Run",
-    "Docker.docker-compose.yml.postgres: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/spring-config",
-    "last_opened_file_path": "E:/Programy/Github/nowy-ecomerce/ecom/configdemo/configdemo/src/main/java/com/info/configdemo",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConfigdemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EcomApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/spring-config&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Programy/Github/nowy-ecomerce/ecom/configdemo/configdemo/src/main/java/com/info/configdemo&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.app.ecom.dto" />
@@ -178,6 +123,10 @@
       </method>
     </configuration>
     <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="GIT_TOKEN" value="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" />
+        <env name="GIT_USERNAME" value="kamiliano1" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.demo.configserver.ConfigserverApplication" />
       <module name="configserver" />
       <extension name="coverage">
@@ -216,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ConfigserverApplication" />
         <item itemvalue="Application.ConfigdemoApplication" />
+        <item itemvalue="Application.ConfigserverApplication" />
         <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
       </list>
     </recent_temporary>
