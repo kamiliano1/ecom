@@ -1,14 +1,47 @@
 spring:
   application:
     name: configserver
+  #    CONFIG FROM GITHUB
+  #  cloud:
+  #    config:
+  #      server:
+  #        git:
+  #          uri: https://github.com/kamiliano1/app-configurations/
+  #          username: ${GIT_USERNAME}
+  #          password: ${GIT_TOKEN}
+  ##         http://localhost:8888/configdemo/default
+  ##         http://localhost:8888/configdemo/dev
+  #  ##############################################
+  # CONFIG FROM DB
+  #  profiles:
+  #    active: jdbc
+  #  datasource:
+  #    url: jdbc:mysql://localhost:3306/configdb
+  #    username: root
+  #    password: admin
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #  cloud:
+  #    config:
+  #      server:
+  #        jdbc:
+  #          sql: "SELECT PROP_KEY, PROP_VALUE from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?"
+  #          default-label: main
+  ##          #############################################
+  #CONFIG FROM CONFIG FILE
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/kamiliano1/app-configurations/
-          username: ${GIT_USERNAME}
-          password: ${GIT_TOKEN}
-#         http://localhost:8888/configdemo/default
-#         http://localhost:8888/configdemo/dev
+        native:
+          search-locations: classpath:/config
 server:
   port: 8888
+
+encrypt:
+  key-store:
+    location: config-server.jks
+    password: mypass
+    alias: config-server-key
+#encrypt:
+#  key: ${ENCRYPT_KEY}

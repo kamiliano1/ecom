@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Configuration/LocalFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/LocalFileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/java/com/demo/configserver/SQLScript/configdemo.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config-server.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/configdemo.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/BuildInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/BuildInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Configuration/ConfigServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Configuration/ConfigServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/ConfigServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/java/com/info/configdemo/Controller/ConfigServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/configdemo-dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/configdemo-prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configdemo/configdemo/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +76,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/spring-config&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Programy/Github/nowy-ecomerce/ecom/configdemo/configdemo/src/main/java/com/info/configdemo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Programy/Github/nowy-ecomerce/ecom/configserver/src/main/resources/config&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
 }</component>
@@ -80,11 +87,11 @@
       <recent name="com.app.ecom.Controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configserver\src\main\resources\config" />
+      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configserver\src\main\resources" />
+      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configserver\src\main\java\com\demo\configserver\SQLScript" />
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configdemo\configdemo\src\main\java\com\info\configdemo" />
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configdemo\configdemo\src\main\resources" />
-      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\order\src\main\java\com\ecommerce\order" />
-      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\product\src\main\java\com\ecommerce\product" />
-      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\user\src\main\java\com\ecommerce\user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom" />
@@ -101,7 +108,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ConfigserverApplication">
+  <component name="RunManager" selected="Application.ConfigdemoApplication">
     <configuration name="ConfigdemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="BUILD_ID" value="4444" />
@@ -124,8 +131,7 @@
     </configuration>
     <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
-        <env name="GIT_TOKEN" value="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" />
-        <env name="GIT_USERNAME" value="kamiliano1" />
+        <env name="ENCRYPT_KEY" value="0E32923EA6D0D62" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.demo.configserver.ConfigserverApplication" />
       <module name="configserver" />

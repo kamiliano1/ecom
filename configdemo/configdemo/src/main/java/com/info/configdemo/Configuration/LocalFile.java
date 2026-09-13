@@ -5,12 +5,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "configserver")
+@ConfigurationProperties(prefix = "localfile")
 @Data
-public class ConfigServer {
+public class LocalFile {
     private String id;
     private String version;
     private String name;
     private String type;
-
 }

@@ -1,11 +1,3 @@
-spring:
-  application:
-    name: configdemo
-  profiles:
-    active: prod
-  config:
-    import: optional:configserver:http://localhost:8888
-
 localfile:
   id: 122
   version: 2.2.2

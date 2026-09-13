@@ -15,6 +15,6 @@ public class ConfigServerController {
 
     @GetMapping("/config-server")
     public String getBuildId() {
-        return "Build ID: " + configServer.getId() + ", Version: " + configServer.getVersion() + ", Name: " + configServer.getName();
+        return "Build ID: " + configServer.getId() + ", Version: " + configServer.getVersion() + ", Name: " + configServer.getName() + ", Type: " + configServer.getType();
     }
 }
