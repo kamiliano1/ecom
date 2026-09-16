@@ -1,5 +1,16 @@
 localfile:
   id: 101
   version: 1.2.4
-  name: "Dev-Production-Build FILE"
+  name: "Dev-Production-Build FILE123"
   type: "Development Build FILE"
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "busrefresh"
