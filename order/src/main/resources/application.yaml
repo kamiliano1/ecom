@@ -1,24 +1,5 @@
 spring:
   application:
     name: order-service
-  datasource:
-    #PostgreSQL
-    url: jdbc:postgresql://localhost:5432/order
-    username: kamil
-    password: kamil
-    #        url: jdbc:mysql://localhost:3306/productservice //lokalnie
-    #    /docker
-  #    url: jdbc:mysql://localhost:3307/kamil
-  #    username: kamil
-  #    password: kamil
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    properties:
-      hibernate:
-        format_sql: true
-server:
-  port: 8083
+  config:
+    import: optional:configserver:http://localhost:8888

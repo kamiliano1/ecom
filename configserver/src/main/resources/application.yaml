@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+#          search-locations: file:///E:\Programy\Github\nowy-ecomerce\microservice\ecom\configserver\src\main\resources\config
+server:
+  port: 8888
