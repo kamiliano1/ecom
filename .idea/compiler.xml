@@ -8,13 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for ecom-application" enabled="true">
+      <profile name="Annotation profile for consumer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="provider" />
+        <module name="consumer" />
         <module name="ecom-application" />
       </profile>
     </annotationProcessing>
@@ -31,10 +33,12 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configdemo" options="-parameters" />
       <module name="configserver" options="-parameters" />
+      <module name="consumer" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="ecom-application" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="product" options="-parameters" />
+      <module name="provider" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>
