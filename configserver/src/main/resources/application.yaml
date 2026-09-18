@@ -1,6 +1,7 @@
 spring:
   application:
     name: configserver
+      
   #    CONFIG FROM GITHUB
   #  cloud:
   #    config:
