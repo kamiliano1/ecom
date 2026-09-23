@@ -1,4 +1,4 @@
-package com.demo.consumer.restclient;
+package com.demo.consumer.httpinterface;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/rest-client")
+@RequestMapping("/api/http-interface")
 @RequiredArgsConstructor
-public class RestClientController {
+public class HttpInterfaceController {
 
-    private final RestClientProvider restClientProvider;
+    private final HttpInterfaceProvider client;
 
     @GetMapping("/instance")
-    public String getInstance() {
-        return restClientProvider.getInstanceInfo();
+    public String getInstanceInfo() {
+        return client.getInstanceInfo();
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.web.client.RestClient;
 
 @Service
 @RequiredArgsConstructor
-public class ProviderRestClient {
+public class RestClientProvider {
 
     private final RestClient restClient;
 
