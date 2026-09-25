@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eureka" />
       </profile>
       <profile name="Annotation profile for consumer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -36,6 +37,7 @@
       <module name="consumer" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="ecom-application" options="-parameters" />
+      <module name="eureka" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="product" options="-parameters" />
       <module name="provider" options="-parameters" />

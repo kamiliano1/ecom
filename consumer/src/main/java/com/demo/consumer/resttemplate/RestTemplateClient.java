@@ -8,7 +8,8 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class RestTemplateClient {
     private final RestTemplate restTemplate;
-    private static final String PROVIDER_URL = "http://localhost:8081";
+    //    private static final String PROVIDER_URL = "http://localhost:8081";
+    private static final String PROVIDER_URL = "http://provider"; // eureka
 
     public String getInstanceInfo() {
         return restTemplate.getForObject(PROVIDER_URL + "/instance-info",
