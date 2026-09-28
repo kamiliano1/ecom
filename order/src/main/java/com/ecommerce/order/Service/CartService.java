@@ -2,8 +2,10 @@ package com.ecommerce.order.Service;
 
 import com.ecommerce.order.Entity.CartItem;
 import com.ecommerce.order.Repository.CartItemRepository;
+import com.ecommerce.order.clients.ProductServiceClient;
 import com.ecommerce.order.dto.CartItemRequest;
 import com.ecommerce.order.dto.CartItemResponse;
+import com.ecommerce.order.dto.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,16 +20,18 @@ import java.util.stream.Collectors;
 @Transactional
 public class CartService {
     private final CartItemRepository cartItemRepository;
+    private final ProductServiceClient productServiceClient;
 
     public boolean addToCart(Long userId, CartItemRequest request) {
-//        Optional<Product> productOpt = productRepository.findById(request.getProductId());
-//        if (productOpt.isEmpty()) {
-//            return false;
-//        }
-//        Product product = productOpt.get();
-//        if (product.getStockQuantity() < request.getQuantity()) {
-//            return false;
-//        }
+        ProductResponse productResponse = productServiceClient
+                .getProductDetails(String.valueOf(request.getProductId()));
+        System.out.println(productResponse);
+        if (productResponse == null) {
+            return false;
+        }
+        if (productResponse.getStockQuantity() < request.getQuantity()) {
+            return false;
+        }
 //
 //        Optional<User> userOpt = userRepository.findById(Long.valueOf(userId));
 //        if (userOpt.isEmpty()) {

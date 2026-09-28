@@ -65,7 +65,7 @@ public class ProductService {
                 });
     }
 
-    public List<ProductResponse> getAllProduct() {
+    public List<ProductResponse> getAllProducts() {
         return productRepository.findByActiveTrue()
                 .stream()
                 .map(this::mapToProductResponse)
@@ -86,7 +86,7 @@ public class ProductService {
     }
 
     public Optional<ProductResponse> getProductById(Long id) {
-        return productRepository.findById(id)
+        return productRepository.findByIdAndActiveTrue(id)
                 .map(this::mapToProductResponse);
 
     }

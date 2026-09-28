@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.HttpExchange;
 
 import java.util.List;
 
@@ -23,8 +24,8 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> getAllProduct() {
-        return new ResponseEntity<List<ProductResponse>>(productService.getAllProduct(), HttpStatus.OK);
+    public ResponseEntity<List<ProductResponse>> getAllProducts() {
+        return new ResponseEntity<List<ProductResponse>>(productService.getAllProducts(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
