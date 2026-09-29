@@ -9,6 +9,7 @@ import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.support.WebClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+import reactor.core.publisher.Mono;
 
 import java.util.Optional;
 
@@ -17,18 +18,18 @@ public class ProductServiceClientConfig {
 
     @Bean
     @LoadBalanced
-    public RestClient.Builder webClientBuilder() {
-        return RestClient.builder();
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
     }
 
     @Bean
-    public ProductServiceClient webClientHttpInterface(RestClient.Builder restClientBuilder) {
-        RestClient restClient = restClientBuilder
+    public ProductServiceClient webClientHttpInterface(WebClient.Builder webClientBuilder) {
+        WebClient webClient = webClientBuilder
                 .baseUrl("http://product-service")
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError,
-                        ((request, response) -> Optional.empty()))
+                        clientResponse -> Mono.empty())
                 .build();
-        RestClientAdapter adapter = RestClientAdapter.create(restClient);
+        WebClientAdapter adapter = WebClientAdapter.create(webClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory
                 .builderFor(adapter)
                 .build();

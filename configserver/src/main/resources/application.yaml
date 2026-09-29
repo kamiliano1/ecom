@@ -8,8 +8,8 @@ spring:
       server:
         native:
 #          search-locations: classpath:/config
-#          search-locations: file:///E:\Programy\Github\nowy-ecomerce\microservice\ecom\configserver\src\main\resources\config
-          search-locations: file:///D:\GitHub\spirng-ecom-git\ecom\configserver\src\main\resources\config
+          search-locations: file:///E:\Programy\Github\nowy-ecomerce\nowy\ecom\configserver\src\main\resources\config
+#          search-locations: file:///D:\GitHub\spirng-ecom-git\ecom\configserver\src\main\resources\config
   rabbitmq:
     host: localhost
     port: 5672

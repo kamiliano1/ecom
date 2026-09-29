@@ -1,6 +1,8 @@
 spring:
   mongodb:
-    url: ${DB_URL}
-    database: ${DB_DATABASE}
+#    url: ${DB_URL}
+#    database: ${DB_DATABASE}
+    url: mongodb://localhost:27017/userdb
+    database: userdb
 server:
   port: 8082

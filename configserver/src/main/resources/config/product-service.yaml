@@ -1,12 +1,12 @@
 spring:
   datasource:
     #PostgreSQL
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-#    url: jdbc:postgresql://localhost:5432/product
-#    username: kamil
-#    password: kamil
+#    url: ${DB_URL}
+#    username: ${DB_USERNAME}
+#    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/product
+    username: kamil
+    password: kamil
   jpa:
     database: POSTGRESQL
     show-sql: true
