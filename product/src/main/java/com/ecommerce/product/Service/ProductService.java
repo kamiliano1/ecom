@@ -55,13 +55,13 @@ public class ProductService {
                 });
     }
 
-    public void deductQuantity(Long id, Integer quantity) {
-        productRepository.findById(id)
+    public Optional<ProductResponse> deductQuantity(Long id, Integer quantity) {
+        return productRepository.findById(id)
                 .map(existitngProduct -> {
                     existitngProduct.setStockQuantity(
                             existitngProduct.getStockQuantity() - quantity);
                     productRepository.save(existitngProduct);
-                    return existitngProduct;
+                    return mapToProductResponse(existitngProduct);
                 });
     }
 

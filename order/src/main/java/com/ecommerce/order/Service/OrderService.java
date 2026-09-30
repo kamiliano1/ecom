@@ -2,8 +2,11 @@ package com.ecommerce.order.Service;
 
 import com.ecommerce.order.Entity.*;
 import com.ecommerce.order.Repository.OrderRepository;
+import com.ecommerce.order.clients.ProductServiceClient;
+import com.ecommerce.order.clients.UserServiceClient;
 import com.ecommerce.order.dto.OrderItemDTO;
 import com.ecommerce.order.dto.OrderResponse;
+import com.ecommerce.order.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,17 +21,16 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final CartService cartService;
+    private final UserServiceClient userServiceClient;
+    private final ProductServiceClient productServiceClient;
 
-    public Optional<OrderResponse> createOrder(Long userId) {
+    public Optional<OrderResponse> createOrder(String userId) {
         List<CartItem> cartItems = cartService.getCart(userId);
         if (cartItems.isEmpty()) {
             return Optional.empty();
         }
-//        Optional<User> userOptional = userRepository.findById(Long.valueOf(userId));
-//        if (userOptional.isEmpty()) {
-//            return Optional.empty();
-//        }
-//        User user = userOptional.get();
+        UserResponse userResponse = userServiceClient.getUserDetails(userId);
+        if (userResponse == null) return Optional.empty();
         BigDecimal totalPrice = cartItems.stream()
                 .map(CartItem::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
@@ -48,10 +50,10 @@ public class OrderService {
         order.setItems(orderItems);
         Order savedOrder = orderRepository.save(order);
         cartService.clearCart(userId);
-//        savedOrder.getItems()
-//                .forEach(item -> {
-//                    productService.deductQuantity(item.getId(), item.getQuantity());
-//                });
+        savedOrder.getItems()
+                .forEach(item -> {
+                    productServiceClient.updateProductQuantity(item.getProductId(), item.getQuantity());
+                });
         return Optional.of(mapToOrderResponse(savedOrder));
     }
 

@@ -10,12 +10,12 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 import reactor.core.publisher.Mono;
 
 @Configuration
-public class ProductServiceClientConfig {
-    
+public class UserServiceClientConfig {
+
     @Bean
-    public ProductServiceClient productWebClientHttpInterface(WebClient.Builder webClientBuilder) {
+    public UserServiceClient userWebClientHttpInterface(WebClient.Builder webClientBuilder) {
         WebClient webClient = webClientBuilder
-                .baseUrl("http://product-service")
+                .baseUrl("http://user-service")
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError,
                         clientResponse -> Mono.empty())
                 .build();
@@ -23,6 +23,6 @@ public class ProductServiceClientConfig {
         HttpServiceProxyFactory factory = HttpServiceProxyFactory
                 .builderFor(adapter)
                 .build();
-        return factory.createClient(ProductServiceClient.class);
+        return factory.createClient(UserServiceClient.class);
     }
 }

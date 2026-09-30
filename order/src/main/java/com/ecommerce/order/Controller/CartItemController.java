@@ -19,7 +19,7 @@ public class CartItemController {
 
     @GetMapping
     public ResponseEntity<List<CartItemResponse>> getUserCart(
-            @RequestHeader("X-User-ID") Long userId
+            @RequestHeader("X-User-ID") String userId
     ) {
         return new ResponseEntity<>(cartService.getUserCart(userId), HttpStatus.OK);
 
@@ -27,7 +27,7 @@ public class CartItemController {
 
     @PostMapping
     public ResponseEntity<String> addToCart(
-            @RequestHeader("X-User-ID") Long userId,
+            @RequestHeader("X-User-ID") String userId,
             @RequestBody CartItemRequest request) {
         return cartService.addToCart(userId, request)
                 ? new ResponseEntity<String>(HttpStatus.CREATED)
@@ -36,7 +36,7 @@ public class CartItemController {
 
     @DeleteMapping("/items/{productId}")
     public ResponseEntity<String> removeFromCart(
-            @RequestHeader("X-User-ID") Long userId,
+            @RequestHeader("X-User-ID") String userId,
             @PathVariable Long productId) {
         return cartService.removeFromCart(userId, productId)
                 ? new ResponseEntity<String>(HttpStatus.NO_CONTENT)

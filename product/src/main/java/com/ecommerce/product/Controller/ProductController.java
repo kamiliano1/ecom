@@ -48,6 +48,13 @@ public class ProductController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @PutMapping("/{id}/{quantity}")
+    public ResponseEntity<ProductResponse> deductProductQuantity(@PathVariable Long id,
+                                                                 @PathVariable Integer quantity) {
+        return productService.deductQuantity(id, quantity).map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         boolean isRemoved = productService.deleteProduct(id);
