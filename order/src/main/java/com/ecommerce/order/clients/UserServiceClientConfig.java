@@ -17,7 +17,7 @@ import java.util.Optional;
 public class UserServiceClientConfig {
 
     @Bean
-    public UserServiceClient userWebClientHttpInterface(RestClient.Builder restClientBuilder) {
+    public UserServiceClient userWebClientHttpInterface(@LoadBalanced RestClient.Builder restClientBuilder) {
         RestClient restClient = restClientBuilder
                 .baseUrl("http://user-service")
                 .defaultStatusHandler(HttpStatusCode::is4xxClientError,
