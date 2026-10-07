@@ -10,8 +10,29 @@ spring:
     port: 5672
     username: guest
     password: guest
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
 management:
   endpoints:
     web:
       exposure:
-        include: "busrefresh"
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+logging:
+  level:
+    root: INFO
+  file:
+    #    Utworzy z nazwa aplikacji
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      #      7 Days
+      max-history: 7
