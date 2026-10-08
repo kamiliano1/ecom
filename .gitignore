@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+evaluate-prometheus/.data/minio/
+logs/

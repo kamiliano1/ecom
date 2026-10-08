@@ -18,3 +18,8 @@ spring:
               uri: lb://order-service
               predicates:
                 - Path=/api/orders/**, /api/cart/**
+#logging:
+#  level:
+#    root: info
+#    org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
+#    org.springframework.cloud.gateway: TRACE
