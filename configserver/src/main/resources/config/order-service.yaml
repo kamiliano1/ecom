@@ -30,3 +30,5 @@ resilience4j:
         failureRateThreshold: 50
         automaticTransitionFromOpenToHalfOpenEnabled: true
         slidingWindowType: count_based
+
+#        https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker
