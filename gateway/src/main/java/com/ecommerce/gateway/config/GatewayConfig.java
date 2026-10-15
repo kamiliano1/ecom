@@ -4,6 +4,7 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 
 @Configuration
 public class GatewayConfig {
@@ -13,25 +14,29 @@ public class GatewayConfig {
         return builder.routes()
                 .route("product-service", r ->
                         r.path("/api/products/**")
-                                .filters(f -> f.circuitBreaker(config -> config
-                                        .setName("ecomBreaker")
-                                        .setFallbackUri("forward:/fallback/products")))
+                                .filters(f ->
+                                        f.retry(retryConfig -> retryConfig
+                                                        .setRetries(10)
+                                                        .setMethods(HttpMethod.GET))
+                                                .circuitBreaker(config -> config
+                                                        .setName("ecomBreaker")
+                                                        .setFallbackUri("forward:/fallback/products")))
 //                        "/api/products${segment}")) // Captures everything after /products as "segment"
                                 // and rewrites /products/** to /api/products/**
                                 .uri("lb://product-service"))
                 .route("user-service", r ->
                         r.path("/api/users/**")
-                                .filters(f -> f.circuitBreaker(config -> config
-                                        .setName("ecomBreaker")
-                                        .setFallbackUri("forward:/fallback/users")))
+//                                .filters(f -> f.circuitBreaker(config -> config
+//                                        .setName("ecomBreaker")
+//                                        .setFallbackUri("forward:/fallback/users")))
 //                                        .filters(f -> f.rewritePath("/users(?<segment>/?.*)",
 //                                        "/api/users${segment}"))
                                 .uri("lb://user-service"))
                 .route("order-service", r ->
                         r.path("/api/orders/**", "/api/cart/**")
-                                .filters(f -> f.circuitBreaker(config -> config
-                                        .setName("ecomBreaker")
-                                        .setFallbackUri("forward:/fallback/orders")))
+//                                .filters(f -> f.circuitBreaker(config -> config
+//                                        .setName("ecomBreaker")
+//                                        .setFallbackUri("forward:/fallback/orders")))
 //                                .filters(f -> f.rewritePath("/(?<segment>.*)",
 //                                        "/api/${segment}"))
                                 .uri("lb://order-service"))

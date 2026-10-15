@@ -17,7 +17,8 @@ spring:
         format_sql: true
 server:
   port: 8083
-
+app:
+  message: "Hello World!"
 resilience4j:
   circuitbreaker:
     instances:
@@ -30,5 +31,32 @@ resilience4j:
         failureRateThreshold: 50
         automaticTransitionFromOpenToHalfOpenEnabled: true
         slidingWindowType: count_based
-
-#        https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker
+  #        https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker
+  retry:
+    instances:
+      retryBreaker:
+        maxAttempts: 5
+        waitDuration: 500ms
+      #https://resilience4j.readme.io/docs/retry
+  #      exampleRetry:
+  #        maxAttempts: 3
+  #        waitDuration: 500ms
+  #        intervalFunction:
+  #          type: exponential
+  #          initialInterval: 500ms
+  #          multiplier: 1.5
+  #          maxInterval: 5s
+  #        retryExceptions:
+  #          - java.io.IOException
+  #          - java.sql.SQLException
+  #        ignoreExceptions:
+  #          - com.example.exception.NonRetriableException
+  #        failAfterMaxAttempts: false
+  ratelimiter:
+    instances:
+      rateLimiterBreaker:
+        timeout-duration: 0
+        #        2 api allowed during 4 seconds
+        limit-refresh-period: 4s
+        limit-for-period: 2
+#        https://resilience4j.readme.io/docs/ratelimiter

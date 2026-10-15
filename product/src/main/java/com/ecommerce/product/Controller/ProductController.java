@@ -28,6 +28,15 @@ public class ProductController {
         return new ResponseEntity<List<ProductResponse>>(productService.getAllProducts(), HttpStatus.OK);
     }
 
+    @GetMapping("/simulate")
+    public ResponseEntity<String> simulateFailure(
+            @RequestParam(defaultValue = "false") boolean fail) {
+        if (fail) {
+            throw new RuntimeException("Simulated Failure for Testing");
+        }
+        return new ResponseEntity<String>("Product Service is OK", HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ProductResponse> getProductById(@PathVariable Long id) {
         return productService.getProductById(id)
