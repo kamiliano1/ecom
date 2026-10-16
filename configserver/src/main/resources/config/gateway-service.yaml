@@ -6,6 +6,20 @@ server:
 #      server:
 #        webflux:
 #          routes:
+#            - id: hostNameKeyResolver
+#              uri: /api/products/**
+#              filters:
+#                - name: redisRateLimiter
+#                  args:
+#                    redis-rate-limiter.replenishRate: 15
+#                    redis-rate-limiter.burstCapacity: 25
+#                    redis-rate-limiter.requestedTokens: 1
+#spring:
+#  cloud:
+#    gateway:
+#      server:
+#        webflux:
+#          routes:
 #            - id: product-service
 #              uri: lb://product-service
 #              predicates:
