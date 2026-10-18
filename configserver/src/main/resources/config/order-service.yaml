@@ -60,3 +60,12 @@ resilience4j:
         limit-refresh-period: 4s
         limit-for-period: 2
 #        https://resilience4j.readme.io/docs/ratelimiter
+
+# RabbitMQ
+rabbitmq:
+  exchange:
+    name: order.exchange
+  queue:
+    name: order.queue
+  routing:
+    key: order.tracking
