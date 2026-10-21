@@ -1,6 +1,5 @@
-package com.eccomerce.notification.dto;
+package com.eccomerce.notification.payload;
 
-import com.ecommerce.order.Entity.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

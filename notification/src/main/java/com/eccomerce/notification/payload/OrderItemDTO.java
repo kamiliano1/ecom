@@ -1,4 +1,4 @@
-package com.ecommerce.order.dto;
+package com.eccomerce.notification.payload;
 
 import lombok.Data;
 

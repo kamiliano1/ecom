@@ -33,3 +33,4 @@ build/
 .vscode/
 evaluate-prometheus/.data/minio/
 logs/
+.env

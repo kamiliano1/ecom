@@ -4,6 +4,7 @@ import com.ecommerce.order.Entity.*;
 import com.ecommerce.order.Repository.OrderRepository;
 import com.ecommerce.order.clients.ProductServiceClient;
 import com.ecommerce.order.clients.UserServiceClient;
+import com.ecommerce.order.dto.OrderCreatedEventDto;
 import com.ecommerce.order.dto.OrderItemDTO;
 import com.ecommerce.order.dto.OrderResponse;
 import com.ecommerce.order.dto.UserResponse;
@@ -64,10 +65,21 @@ public class OrderService {
                     productServiceClient.updateProductQuantity(item.getProductId(), item.getQuantity());
                 });
 
+        // Publish order created event
+        OrderCreatedEventDto eventDto = new OrderCreatedEventDto(
+                savedOrder.getId(),
+                savedOrder.getUserId(),
+                savedOrder.getStatus(),
+                savedOrder.getItems()
+                        .stream()
+                        .map(this::orderToOrderDTO)
+                        .collect(Collectors.toList()),
+                savedOrder.getTotalAmount(),
+                savedOrder.getCreatedAt()
+        );
         rabbitTemplate.convertAndSend(exchangeName,
                 routingKey,
-                Map.of("orderId", savedOrder.getId(),
-                        "status", "CREATED"));
+                eventDto);
         return Optional.of(mapToOrderResponse(savedOrder));
     }
 
