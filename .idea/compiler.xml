@@ -7,14 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="producer" />
       </profile>
-      <profile name="Annotation profile for ecom-application" enabled="true">
+      <profile name="Annotation profile for consumer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="consumer" />
         <module name="ecom-application" />
       </profile>
     </annotationProcessing>
@@ -22,8 +24,11 @@
       <module name="configdemo" target="21" />
       <module name="configserver" target="1.8" />
       <module name="demo" target="1.8" />
-      <module name="order" target="11" />
-      <module name="product" target="1.8" />
+      <module name="eurekaserver" target="17" />
+      <module name="gateway" target="1.8" />
+      <module name="notification" target="1.8" />
+      <module name="order" target="21" />
+      <module name="product" target="21" />
       <module name="user" target="21" />
     </bytecodeTargetLevel>
   </component>
@@ -31,9 +36,11 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configdemo" options="-parameters" />
       <module name="configserver" options="-parameters" />
+      <module name="consumer" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="ecom-application" options="-parameters" />
       <module name="order" options="-parameters" />
+      <module name="producer" options="-parameters" />
       <module name="product" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
