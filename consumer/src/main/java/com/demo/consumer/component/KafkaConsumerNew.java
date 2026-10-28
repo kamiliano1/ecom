@@ -16,6 +16,7 @@ public class KafkaConsumerNew {
                     + location.getRiderId()
                     + " @ " + location.getLatitude()
                     + ", " + location.getLongitude());
+            
         };
     }
 
