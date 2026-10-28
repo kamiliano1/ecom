@@ -5,20 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ecom.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/entity/RiderLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/configuration/KafkaTopicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/entity/RiderLocation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/producer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,11 +72,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "feature/kafka",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/GitHub/spring-ecom-git/ecom",
+    "last_opened_file_path": "E:/Programy/Github/nowy-ecomerce/nowy/ecom/consumer/src/main/java/com/demo/consumer",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "actions.on.save"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -87,11 +91,11 @@
       <recent name="com.app.ecom.Controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Programy\Github\nowy-ecomerce\nowy\ecom\consumer\src\main\java\com\demo\consumer" />
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configserver\src\main\resources\config" />
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configserver\src\main\resources" />
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configserver\src\main\java\com\demo\configserver\SQLScript" />
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configdemo\configdemo\src\main\java\com\info\configdemo" />
-      <recent name="E:\Programy\Github\nowy-ecomerce\ecom\configdemo\configdemo\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom" />
