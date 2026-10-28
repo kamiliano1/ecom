@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/function/FunctionsClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumerNew.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducerStreams.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/producer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/configuration/KafkaTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/configuration/KafkaTopicConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +47,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/producer/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -57,6 +62,7 @@
   "keyToString": {
     "Application.ConfigdemoApplication.executor": "Run",
     "Application.ConfigserverApplication.executor": "Run",
+    "Application.ConsumerApplication (1).executor": "Run",
     "Application.ConsumerApplication.executor": "Run",
     "Application.EcomApplication.executor": "Run",
     "Application.OrderApplication.executor": "Run",
@@ -110,6 +116,8 @@
       <recent name="E:\Programy\Github\nowy-ecomerce\ecom" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo.consumer.component" />
+      <recent name="com.demo.producer.controller" />
       <recent name="com.info.configdemo.Configuration" />
       <recent name="com.info.configdemo.Controller" />
     </key>
@@ -121,7 +129,31 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProducerApplication">
+  <component name="RunManager" selected="Application.ConsumerApplication">
+    <configuration name="ConsumerApplication (1)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.demo.consumer.ConsumerApplication" />
+      <module name="consumer" />
+      <option name="PROGRAM_PARAMETERS" value="--server.port=9091" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.consumer.ConsumerApplication" />
       <module name="consumer" />
@@ -130,6 +162,16 @@
           <option name="PATTERN" value="com.demo.consumer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,6 +185,16 @@
           <option name="PATTERN" value="com.demo.producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -195,29 +247,18 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.ConsumerApplication (1)" />
       <item itemvalue="Application.ConsumerApplication" />
       <item itemvalue="Application.ProducerApplication" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="Spring Boot.ConsumerApplication" />
-      <item itemvalue="Spring Boot.ProducerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProducerApplication" />
-        <item itemvalue="Spring Boot.ConsumerApplication" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.ConsumerApplication" />
         <item itemvalue="Application.ProducerApplication" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

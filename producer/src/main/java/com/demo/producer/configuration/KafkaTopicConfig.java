@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class KafkaTopicConfig {
     @Bean
     public NewTopic createMyTopic() {
-        return new NewTopic("my-new-topic-java", 3, (short) 1);
+
+        return new NewTopic("my-new-topic-java-stream", 3, (short) 1);
     }
 }
