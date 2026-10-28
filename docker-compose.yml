@@ -1,37 +1,108 @@
 services:
-  postgres:
-    container_name: postgres_container
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: kamil
-      POSTGRES_PASSWORD: kamil
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
+  #  postgres:
+  #    container_name: postgres_container
+  #    image: postgres:latest
+  #    environment:
+  #      POSTGRES_USER: kamil
+  #      POSTGRES_PASSWORD: kamil
+  #      PGDATA: /data/postgres
+  #    volumes:
+  #      - postgres:/data/postgres
+  #    ports:
+  #      - "5432:5432"
+  #    networks:
+  #      - postgres
+  #    restart: unless-stopped
+  #  pgadmin:
+  #    container_name: pgadmin_container
+  #    image: dpage/pgadmin4
+  #    environment:
+  #      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+  #      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+  #      PGADMIN_CONFIG_SERVER_MODE: "False"
+  #    volumes:
+  #      - pgadmin:/var/lib/pgadmin
+  #    ports:
+  #      - "5050:80"
+  #    networks:
+  #      - postgres
+  #    restart: unless-stopped
+  #  rabbitmq:
+  #    container_name: rabbitmq_container
+  #    image: rabbitmq:3-management
+  #    environment:
+  #      RABBITMQ_DEFAULT_USER: guest
+  #      RABBITMQ_DEFAULT_PASS: guest
+  #    ports:
+  #      - "5672:5672"
+  #      - "15672:15672"
+  #    networks:
+  #      - backend
+  #    restart: unless-stopped
+  #  mysql:
+  #    container_name: mysql_container
+  #    image: mysql
+  #    environment:
+  #      MYSQL_ROOT_PASSWORD: kamil
+  #      MYSQL_DATABASE: kamil
+  #      MYSQL_USER: kamil
+  #      MYSQL_PASSWORD: kamil
+  #    volumes:
+  #      - mysql_data:/var/lib/mysql
+  #    ports:
+  #      - "3307:3306"
+  #    networks:
+  #      - mysql
+  #    restart: unless-stopped
+  #  phpmyadmin:
+  #    container_name: phpmyadmin_container
+  #    image: phpmyadmin/phpmyadmin
+  #    environment:
+  #      PMA_HOST: mysql
+  #      PMA_PORT: 3306
+  #      MYSQL_ROOT_PASSWORD: kamil
+  #    volumes:
+  #      - mysql_data:/var/lib/mysql
+  #    ports:
+  #      - "8484:80"
+  #    networks:
+  #      - mysql
+  #    restart: unless-stopped
+  zookeeper:
+    container_name: zookeeper
+    image: confluentinc/cp-zookeeper:7.5.0
     ports:
-      - "5432:5432"
-    networks:
-      - postgres
-    restart: unless-stopped
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
+      - "2181:2181"
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: "False"
-    volumes:
-      - pgadmin:/var/lib/pgadmin
-    ports:
-      - "5050:80"
-    networks:
-      - postgres
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
     restart: unless-stopped
-
+    networks:
+      - kafka
+  kafka:
+    container_name: kafka
+    image: confluentinc/cp-kafka:7.5.0
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    restart: unless-stopped
+    networks:
+      - kafka
 networks:
-  postgres:
+  #  postgres:
+  #    driver: bridge
+  #  backend:
+  #    driver: bridge
+  kafka:
     driver: bridge
+#  mysql:
+#    driver: bridge
 
-volumes:
-  postgres:
-  pgadmin:
+#volumes:
+#  postgres:
+#  pgadmin:
+#  mysql_data:

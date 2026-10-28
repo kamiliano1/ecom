@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/entity/RiderLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/configuration/KafkaTopicConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/entity/RiderLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/function/FunctionsClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/demo/consumer/component/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/producer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/java/com/demo/producer/controller/KafkaProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/producer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/producer/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,14 +68,24 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ConsumerApplication.executor": "Run",
+    "Spring Boot.ProducerApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "feature/kafka",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Programy/Github/nowy-ecomerce/nowy/ecom/consumer/src/main/java/com/demo/consumer",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "actions.on.save"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/GitHub/kafka/ecom",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -112,43 +121,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ConsumerApplication">
-    <configuration name="ConfigdemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="BUILD_ID" value="4444" />
-        <env name="BUILD_NAME" value="NAME_TEST" />
-        <env name="BUILD_VERSION" value="1.0.0Final" />
-        <env name="INTELLIID" value="From Intelli 1.2.3.4" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.info.configdemo.ConfigdemoApplication" />
-      <module name="configdemo" />
-      <option name="PROGRAM_PARAMETERS" value="--build.id=777 --build.name=ArgumentName" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.info.configdemo.Configuration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="ENCRYPT_KEY" value="0E32923EA6D0D62" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.demo.configserver.ConfigserverApplication" />
-      <module name="configserver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.demo.configserver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ProducerApplication">
     <configuration name="ConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.consumer.ConsumerApplication" />
       <module name="consumer" />
@@ -175,14 +148,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="ConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="24" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.consumer.ConsumerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
+    <configuration name="ProducerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="27" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="producer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.producer.ProducerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
@@ -190,14 +186,9 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="services">
-            <list>
-              <option value="postgres" />
-            </list>
-          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -206,19 +197,27 @@
     <list>
       <item itemvalue="Application.ConsumerApplication" />
       <item itemvalue="Application.ProducerApplication" />
-      <item itemvalue="Application.ConfigserverApplication" />
-      <item itemvalue="Application.ConfigdemoApplication" />
-      <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Spring Boot.ConsumerApplication" />
+      <item itemvalue="Spring Boot.ProducerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ProducerApplication" />
+        <item itemvalue="Spring Boot.ConsumerApplication" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.ConsumerApplication" />
         <item itemvalue="Application.ProducerApplication" />
-        <item itemvalue="Application.ConfigdemoApplication" />
-        <item itemvalue="Application.ConfigserverApplication" />
-        <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -229,5 +228,12 @@
       <updated>1787848303724</updated>
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

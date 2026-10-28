@@ -8,3 +8,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       properties:
         spring.json.add.type.headers: false
+
+  cloud:
+    function:
+      definition: uppercase
+    function.web.path: /uppercase
