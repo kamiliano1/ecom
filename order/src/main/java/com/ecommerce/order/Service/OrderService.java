@@ -11,6 +11,7 @@ import com.ecommerce.order.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -27,12 +28,7 @@ public class OrderService {
     private final CartService cartService;
     private final UserServiceClient userServiceClient;
     private final ProductServiceClient productServiceClient;
-    private final RabbitTemplate rabbitTemplate;
-    @Value("${rabbitmq.exchange.name}")
-    private String exchangeName;
-
-    @Value("${rabbitmq.routing.key}")
-    private String routingKey;
+    private final StreamBridge streamBridge;
 
     public Optional<OrderResponse> createOrder(String userId) {
         List<CartItem> cartItems = cartService.getCart(userId);
@@ -77,9 +73,7 @@ public class OrderService {
                 savedOrder.getTotalAmount(),
                 savedOrder.getCreatedAt()
         );
-        rabbitTemplate.convertAndSend(exchangeName,
-                routingKey,
-                eventDto);
+        streamBridge.send("createOrder-out-0", eventDto);
         return Optional.of(mapToOrderResponse(savedOrder));
     }
 

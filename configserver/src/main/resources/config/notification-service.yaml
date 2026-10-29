@@ -7,3 +7,15 @@ rabbitmq:
     name: order.queue
   routing:
     key: order.tracking
+spring:
+  cloud:
+    stream:
+      functions:
+        definition: orderCreated
+      bindings:
+        orderCreated-in-0:
+          destination: order.exchange-
+          group: notification-group
+          content-type: application/json
+    function:
+      definition: orderCreated

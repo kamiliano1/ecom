@@ -15,6 +15,17 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  cloud:
+    stream:
+      bindings:
+        createOrder-out-0:
+          destination: order.exchange
+          content-type: application/json
+      rabbit:
+        bindings:
+          createOrder-out-0:
+            producer:
+              routing-key-expression: '''order.tracking'''
 server:
   port: 8083
 app:
@@ -62,6 +73,7 @@ resilience4j:
 #        https://resilience4j.readme.io/docs/ratelimiter
 
 # RabbitMQ
+
 rabbitmq:
   exchange:
     name: order.exchange
