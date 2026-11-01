@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: resource
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8443/realms/ouath2-demo
+server:
+  port: 8082
+
