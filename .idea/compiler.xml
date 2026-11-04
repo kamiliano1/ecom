@@ -17,22 +17,20 @@
         </processorPath>
         <module name="ecom-application" />
       </profile>
-      <profile name="Annotation profile for client" enabled="true">
+      <profile name="Annotation profile for pkce" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.48/lombok-1.18.48.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.48/lombok-1.18.48.jar" />
         </processorPath>
-        <module name="client" />
-        <module name="pure-client" />
-        <module name="resource" />
-        <module name="auth-code-flow" />
+        <module name="pkce" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configdemo" target="21" />
-      <module name="configserver" target="1.8" />
+      <module name="configserver" target="26" />
       <module name="demo" target="1.8" />
       <module name="eurekaserver" target="17" />
       <module name="gateway" target="1.8" />
@@ -44,16 +42,17 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="auth-code-flow" options="-parameters" />
-      <module name="client" options="-parameters" />
+      <module name="auth-code-flow" options="" />
+      <module name="client" options="" />
       <module name="configdemo" options="-parameters" />
       <module name="configserver" options="-parameters" />
       <module name="demo" options="-parameters" />
-      <module name="ecom-application" options="-parameters" />
+      <module name="ecom-application" options="" />
       <module name="order" options="-parameters" />
+      <module name="pkce" options="-parameters" />
       <module name="product" options="-parameters" />
-      <module name="pure-client" options="-parameters" />
-      <module name="resource" options="-parameters" />
+      <module name="pure-client" options="" />
+      <module name="resource" options="" />
       <module name="user" options="-parameters" />
     </option>
   </component>

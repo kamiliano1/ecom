@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/demo/client/controller/ProxyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/demo/client/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/demo/client/service/Service2Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkce/src/main/java/com/demo/pkce/controller/ApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkce/src/main/java/com/demo/pkce/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -40,6 +40,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -65,11 +72,23 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.PkceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "feature/security",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Programy/Github/nowy-ecomerce/nowy/ecom/client/src/main/java/com/demo/client",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/GitHub/ecom",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propCompiler"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -105,7 +124,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientApplication">
+  <component name="RunManager" selected="Spring Boot.PkceApplication">
     <configuration name="AuthCodeFlowApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.auth_code_flow.AuthCodeFlowApplication" />
       <module name="auth-code-flow" />
@@ -125,42 +144,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigdemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="BUILD_ID" value="4444" />
-        <env name="BUILD_NAME" value="NAME_TEST" />
-        <env name="BUILD_VERSION" value="1.0.0Final" />
-        <env name="INTELLIID" value="From Intelli 1.2.3.4" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.info.configdemo.ConfigdemoApplication" />
-      <module name="configdemo" />
-      <option name="PROGRAM_PARAMETERS" value="--build.id=777 --build.name=ArgumentName" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.info.configdemo.Configuration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="ENCRYPT_KEY" value="0E32923EA6D0D62" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.demo.configserver.ConfigserverApplication" />
-      <module name="configserver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.demo.configserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -203,22 +186,23 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <configuration name="PkceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="pkce" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.pkce.PkceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.pkce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="postgres" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
       </deployment>
       <method v="2" />
     </configuration>
@@ -227,21 +211,25 @@
       <item itemvalue="Application.PureClientApplication" />
       <item itemvalue="Application.ResourceApplication" />
       <item itemvalue="Application.AuthCodeFlowApplication" />
-      <item itemvalue="Application.ConfigserverApplication" />
-      <item itemvalue="Application.ConfigdemoApplication" />
-      <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
+      <item itemvalue="Spring Boot.PkceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.PkceApplication" />
         <item itemvalue="Application.ClientApplication" />
         <item itemvalue="Application.ResourceApplication" />
         <item itemvalue="Application.PureClientApplication" />
         <item itemvalue="Application.AuthCodeFlowApplication" />
-        <item itemvalue="Application.ConfigdemoApplication" />
-        <item itemvalue="Application.ConfigserverApplication" />
-        <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -252,5 +240,12 @@
       <updated>1787848303724</updated>
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
