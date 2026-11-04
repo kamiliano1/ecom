@@ -12,6 +12,7 @@ public class ApiController {
         String surname = jwt.getClaim("preferred_username");
         String firstname = jwt.getClaim("given_name");
         String lastname = jwt.getClaim("family_name");
+        
         return "Hello home: " + surname + " " + firstname + " " + lastname;
     }
 }
