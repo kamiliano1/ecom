@@ -26,6 +26,10 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.48/lombok-1.18.48.jar" />
         </processorPath>
         <module name="pkce" />
+        <module name="client" />
+        <module name="pure-client" />
+        <module name="resource" />
+        <module name="auth-code-flow" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -42,17 +46,17 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="auth-code-flow" options="" />
-      <module name="client" options="" />
+      <module name="auth-code-flow" options="-parameters" />
+      <module name="client" options="-parameters" />
       <module name="configdemo" options="-parameters" />
       <module name="configserver" options="-parameters" />
       <module name="demo" options="-parameters" />
-      <module name="ecom-application" options="" />
+      <module name="ecom-application" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="pkce" options="-parameters" />
       <module name="product" options="-parameters" />
-      <module name="pure-client" options="" />
-      <module name="resource" options="" />
+      <module name="pure-client" options="-parameters" />
+      <module name="resource" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>

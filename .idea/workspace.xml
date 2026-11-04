@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12396215-97cb-4d07-92af-498a5fc66f8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkce/src/main/java/com/demo/pkce/controller/ApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkce/src/main/java/com/demo/pkce/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkce/pkce-demo-react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pkce/pkce-demo-react/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkce/pkce-demo-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pkce/pkce-demo-react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkce/pkce-demo-react/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/pkce/pkce-demo-react/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkce/pkce-demo-react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pkce/pkce-demo-react/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkce/pkce-demo-react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pkce/pkce-demo-react/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkce/src/main/java/com/demo/pkce/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pkce/src/main/java/com/demo/pkce/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +41,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -63,6 +57,7 @@
     "Application.ConfigserverApplication.executor": "Run",
     "Application.EcomApplication.executor": "Run",
     "Application.OrderApplication.executor": "Run",
+    "Application.PkceApplication.executor": "Run",
     "Application.ProductApplication.executor": "Run",
     "Application.PureClientApplication.executor": "Run",
     "Application.ResourceApplication.executor": "Run",
@@ -88,7 +83,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "MavenSettings"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -124,7 +119,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PkceApplication">
+  <component name="RunManager" selected="Application.PkceApplication">
     <configuration name="AuthCodeFlowApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.auth_code_flow.AuthCodeFlowApplication" />
       <module name="auth-code-flow" />
@@ -144,6 +139,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.demo.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PkceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.pkce.PkceApplication" />
+      <module name="pkce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.pkce.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -207,29 +215,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.PkceApplication" />
       <item itemvalue="Application.ClientApplication" />
       <item itemvalue="Application.PureClientApplication" />
       <item itemvalue="Application.ResourceApplication" />
       <item itemvalue="Application.AuthCodeFlowApplication" />
-      <item itemvalue="Spring Boot.PkceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.PkceApplication" />
+        <item itemvalue="Application.PkceApplication" />
         <item itemvalue="Application.ClientApplication" />
         <item itemvalue="Application.ResourceApplication" />
         <item itemvalue="Application.PureClientApplication" />
         <item itemvalue="Application.AuthCodeFlowApplication" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
