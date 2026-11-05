@@ -66,3 +66,11 @@ resilience4j:
 #    root: info
 #    org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
 #    org.springframework.cloud.gateway: TRACE
+
+#SECURITY
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8443/realms/ecom-app
