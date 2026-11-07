@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
+    private final KeyCloakAdminService keyCloakAdminService;
 
     public List<UserResponse> fetchAllUsers() {
         return userRepository.findAll().stream()
@@ -24,9 +25,17 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public Optional<UserResponse> fetchById(String id) {
+        return userRepository.findById(id).map(this::mapToUserResponse);
+
+    }
+
     public User addUser(UserRequest userRequest) {
+        String token = keyCloakAdminService.getAdminAccessToken();
+        String keyCloakUserId = keyCloakAdminService.createUser(token, userRequest);
         User user = new User();
         updateUserFromRequest(user, userRequest);
+        user.setKeycloakId(keyCloakUserId);
         userRepository.save(user);
         return user;
     }
@@ -48,6 +57,7 @@ public class UserService {
 
     private void updateUserFromRequest(User user, UserRequest userRequest) {
         user.setFirstName(userRequest.getFirstName());
+        user.setUserName(userRequest.getUserName());
         user.setLastName(userRequest.getLastName());
         user.setEmail(userRequest.getEmail());
         user.setPhone(userRequest.getPhone());
@@ -67,10 +77,12 @@ public class UserService {
         UserResponse response = new UserResponse();
         response.setId(user.getId());
         response.setUserRole(user.getUserRole());
+        response.setUserName(user.getUserName());
         response.setEmail(user.getEmail());
         response.setFirstName(user.getFirstName());
         response.setLastName(user.getLastName());
         response.setPhone(user.getPhone());
+        response.setKeyCloakId(user.getKeycloakId());
         if (user.getAddress() != null) {
             AddressDto addressDto = new AddressDto();
             addressDto.setCity(user.getAddress().getCity());
