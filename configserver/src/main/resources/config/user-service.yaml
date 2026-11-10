@@ -14,3 +14,4 @@ keycloak:
     server-url: http://localhost:8443
     realm: ecom-app
     client-id: admin-cli
+    client-uid: ac6d8c20-b67d-4e1d-a441-a25d8061a808
