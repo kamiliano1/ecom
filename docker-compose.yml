@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - postgres
+      - backend
     restart: unless-stopped
   pgadmin:
     container_name: pgadmin_container
@@ -25,7 +25,7 @@ services:
     ports:
       - "5050:80"
     networks:
-      - postgres
+      - backend
     restart: unless-stopped
   rabbitmq:
     container_name: rabbitmq_container
@@ -78,7 +78,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     restart: unless-stopped
     networks:
-      - kafka
+      - backend
   kafka:
     container_name: kafka
     image: confluentinc/cp-kafka:7.5.0
@@ -91,7 +91,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     restart: unless-stopped
     networks:
-      - kafka
+      - backend
   #  docker run -p 127.0.0.1:8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.8.1 start-dev
   keycloak:
     container_name: keycloak
@@ -103,19 +103,32 @@ services:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
     restart: unless-stopped
-#    networks:
-#      - kafka
-networks:
-  postgres:
-    driver: bridge
-  backend:
-    driver: bridge
-  kafka:
-    driver: bridge
-#  mysql:
+    networks:
+      - backend
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - backend
+#networks:
+#  postgres:
 #    driver: bridge
-
+##  mysql:
+##    driver: bridge
+#
 volumes:
   postgres:
   pgadmin:
 #  mysql_data:
+networks:
+  backend:
+    driver: bridge
