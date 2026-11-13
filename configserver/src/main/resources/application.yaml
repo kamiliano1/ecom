@@ -2,7 +2,10 @@ spring:
   application:
     name: configserver
   profiles:
-    active: native
+    group:
+      docker:
+        - native
+    active: docker
   cloud:
     config:
       server:
@@ -12,7 +15,7 @@ spring:
   #          search-locations: file:///D:\GitHub\ecom\configserver\src\main\resources\config
   #          search-locations: file:///D:\GitHub\spirng-ecom-git\ecom\configserver\src\main\resources\config
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest

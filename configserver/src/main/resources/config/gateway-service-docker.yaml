@@ -1,0 +1,76 @@
+server:
+  port: 8080
+#spring:
+#  cloud:
+#    gateway:
+#      server:
+#        webflux:
+#          routes:
+#            - id: hostNameKeyResolver
+#              uri: /api/products/**
+#              filters:
+#                - name: redisRateLimiter
+#                  args:
+#                    redis-rate-limiter.replenishRate: 15
+#                    redis-rate-limiter.burstCapacity: 25
+#                    redis-rate-limiter.requestedTokens: 1
+#spring:
+#  cloud:
+#    gateway:
+#      server:
+#        webflux:
+#          routes:
+#            - id: product-service
+#              uri: lb://product-service
+#              predicates:
+#                - Path=/products/**
+#              filters:
+#                - "RewritePath=/products(?<segment>/?.*),/api/products${segment}"
+#            - id: user-service
+#              uri: lb://user-service
+#              predicates:
+#                - Path=/users/**
+#              filters:
+#                - "RewritePath=/users(?<segment>/?.*),/api/users${segment}"
+#            - id: order-service
+#              uri: lb://order-service
+#              predicates:
+#                - Path=/orders/**, /cart/**
+#              filters:
+#                - "RewritePath=/(?<segment>.*),/api/${segment}"
+#            - id: eureka-server
+#              uri: http://localhost:8761
+#              predicates:
+#                - Path=/eureka/main
+#              filters:
+#                - "SetPath=/"
+#            - id: eureka-server-static
+#              uri: http://localhost:8761
+#              predicates:
+#                - Path=/eureka/**
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      ecomBreaker:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 10s
+        failureRateThreshold: 50
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        slidingWindowType: count_based
+#logging:
+#  level:
+#    root: info
+#    org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
+#    org.springframework.cloud.gateway: TRACE
+
+#SECURITY
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/ecom-app

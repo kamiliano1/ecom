@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: postgres_container
+    container_name: postgres
     image: postgres:latest
     environment:
       POSTGRES_USER: kamil
@@ -14,7 +14,7 @@ services:
       - backend
     restart: unless-stopped
   pgadmin:
-    container_name: pgadmin_container
+    container_name: pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
@@ -28,7 +28,7 @@ services:
       - backend
     restart: unless-stopped
   rabbitmq:
-    container_name: rabbitmq_container
+    container_name: rabbitmq
     image: rabbitmq:3-management
     environment:
       RABBITMQ_DEFAULT_USER: guest
@@ -119,12 +119,33 @@ services:
       - "9411:9411"
     networks:
       - backend
-#networks:
-#  postgres:
-#    driver: bridge
-##  mysql:
-##    driver: bridge
-#
+  #networks:
+  #  postgres:
+  #    driver: bridge
+  ##  mysql:
+  ##    driver: bridge
+  #
+
+  config-server:
+    build: ./configserver
+    container_name: config-server
+    environment:
+      - RABBITMQ_HOST=${RABBITMQ_HOST_VALUE}
+      - RABBITMQ_PORT=${RABBITMQ_PORT_VALUE}
+      - RABBITMQ_USERNAME=${RABBITMQ_USERNAME_VALUE}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD_VALUE}
+      - RABBITMQ_VHOST=${RABBITMQ_VHOST_VALUE}
+    #      - RABBITMQ_HOST=rabbitmq
+    #      - RABBITMQ_PORT=5672
+    #      - RABBITMQ_USERNAME=guest
+    #      - RABBITMQ_PASSWORD=guest
+    #      - RABBITMQ_VHOST=/
+    ports:
+      - "8888:8888"
+    networks:
+      - backend
+
+
 volumes:
   postgres:
   pgadmin:

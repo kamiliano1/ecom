@@ -1,0 +1,47 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+spring:
+  rabbitmq:
+    #    addresses: ${CLOUDAMQP_URL}
+    host: ${RABBITMQ_HOST_VALUE:localhost}
+    port: ${RABBITMQ_PORT_VALUE:5672}
+    username: ${RABBITMQ_USERNAME_VALUE:guest}
+    password: ${RABBITMQ_PASSWORD_VALUE:guest}
+    virtual-host: ${RABBITMQ_VHOST_VALUE:guest}
+    connection-timeout: 30000
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    sampling:
+      probability: 1.0
+logging:
+  level:
+    root: INFO
+  file:
+    #    Utworzy z nazwa aplikacji
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      #      7 Days
+      max-history: 7
